@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DAE-4D-Yll">
-    <device id="retina3_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DAE-4D-Yll">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,18 +19,26 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="On7-Y3-di6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1C6-9O-SVB">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Album" id="QJv-Ci-CHC"/>
+                                    <barButtonItem title="Album" id="QJv-Ci-CHC">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="bGQ-Pu-4WW"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="esr-mh-D04"/>
-                                    <barButtonItem style="plain" systemItem="camera" id="DxK-qV-nAh"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="DxK-qV-nAh">
+                                        <connections>
+                                            <action selector="shootAnImage:" destination="BYZ-38-t0r" id="N7M-4D-FEW"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xs7-c1-eEn">
@@ -40,7 +48,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-yo-QsS">
-                                <rect key="frame" x="26" y="409" width="268" height="17"/>
+                                <rect key="frame" x="26" y="497" width="268" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -64,7 +72,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ITA-IG-nYB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="abZ-et-gNB"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="abZ-et-gNB">
+                            <connections>
+                                <action selector="shareButton:" destination="BYZ-38-t0r" id="t2c-WK-UcT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="7IR-xM-JFN"/>
                     </navigationItem>
                     <connections>
@@ -73,6 +85,7 @@
                         <outlet property="cancelButton" destination="7IR-xM-JFN" id="rrT-MP-67n"/>
                         <outlet property="pickedImage" destination="On7-Y3-di6" id="CPy-Uc-Y13"/>
                         <outlet property="shareButton" destination="abZ-et-gNB" id="TE5-C5-aE4"/>
+                        <outlet property="toolBar" destination="1C6-9O-SVB" id="dkW-du-hS8"/>
                         <outlet property="topTextField" destination="xs7-c1-eEn" id="Mdd-aU-wYj"/>
                     </connections>
                 </viewController>
