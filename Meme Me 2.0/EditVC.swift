@@ -141,8 +141,6 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         
-        
-        
     }
     
     func generateMemedImage() -> UIImage {
