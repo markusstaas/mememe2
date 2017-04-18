@@ -23,10 +23,10 @@ class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         self.memeTable.reloadData()
         if memes.isEmpty{
             
-            getStartedButt.isHidden = true
+            getStartedButt.isHidden = false
             
         }else{
-            getStartedButt.isHidden = false
+            getStartedButt.isHidden = true
         }
     }
     
