@@ -12,12 +12,22 @@ import Foundation
 class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var memeTable: UITableView!
+    @IBOutlet weak var getStartedButt: UIButton!
+    
+    
     var memes : [Meme]!
     
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         self.memeTable.reloadData()
+        if memes.isEmpty{
+            
+            getStartedButt.isHidden = true
+            
+        }else{
+            getStartedButt.isHidden = false
+        }
     }
     
     override func viewDidLoad() {
@@ -36,6 +46,7 @@ class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         cell.detailTextLabel?.text = "\(memeListItem.bottomText!)"
         cell.imageView?.image = memeListItem.memedImage
         return cell
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,10 +62,12 @@ class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            //memes.remove(at: indexPath.row)
-             (UIApplication.shared.delegate as! AppDelegate).memes.remove(at: indexPath.row)
+            //change current state of memes to avoid crash/row error
+            self.memes.remove(at: indexPath.row)
+            //update table
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            //self.memeTable.reloadData()
+            //remove data from model
+           (UIApplication.shared.delegate as! AppDelegate).memes.remove(at: indexPath.row)
         }
     }
 

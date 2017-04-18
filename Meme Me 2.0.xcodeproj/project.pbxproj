@@ -50,7 +50,7 @@
 		284D66221EA471E400835FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				287C0CBC1E8E1F2900578043 /* MemeData.swift */,
+				287C0CAA1E8E1ED300578043 /* AppDelegate.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -88,8 +88,8 @@
 			children = (
 				284D66231EA4720200835FFE /* View */,
 				284D66221EA471E400835FFE /* Model */,
-				287C0CAA1E8E1ED300578043 /* AppDelegate.swift */,
 				28D4FA771E9112D6008ABADE /* impact.ttf */,
+				287C0CBC1E8E1F2900578043 /* MemeData.swift */,
 				287C0CAE1E8E1ED300578043 /* Main.storyboard */,
 				287C0CB11E8E1ED300578043 /* Assets.xcassets */,
 				287C0CB31E8E1ED300578043 /* LaunchScreen.storyboard */,
