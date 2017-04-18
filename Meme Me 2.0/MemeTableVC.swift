@@ -51,8 +51,10 @@ class MemeTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            memes.remove(at: indexPath.row)
+            //memes.remove(at: indexPath.row)
+             (UIApplication.shared.delegate as! AppDelegate).memes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            //self.memeTable.reloadData()
         }
     }
 
